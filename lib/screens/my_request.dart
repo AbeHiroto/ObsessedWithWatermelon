@@ -30,8 +30,8 @@ class _MyRequestScreenState extends State<MyRequestScreen> {
       // | |｜／::::::::|::::::|
 
     final response = await http.get(
-      Uri.parse('https://abehiroto.com:10443/request/info'),
-      //Uri.parse('http://localhost:8080/request/info'),
+      //Uri.parse('https://abehiroto.com:10443/request/info'),
+      Uri.parse('http://localhost:8080/request/info'),
       headers: {
         'Authorization': 'Bearer $token',
       },
@@ -55,8 +55,8 @@ class _MyRequestScreenState extends State<MyRequestScreen> {
       // | |｜／::::::::|::::::|
 
     final response = await http.delete(
-      Uri.parse('https://abehiroto.com:10443/request/disable'),
-      //Uri.parse('http://localhost:8080/request/disable'),
+      //Uri.parse('https://abehiroto.com:10443/request/disable'),
+      Uri.parse('http://localhost:8080/request/disable'),
       headers: {
         'Authorization': 'Bearer $token',
       },

@@ -91,28 +91,14 @@ class _MyAppState extends State<MyApp> {
       // | ./|　　/:::::|::::::|
       // | |｜／::::::::|::::::|
 
-  void _handleDeepLink(String link) {
-    print('Deep link received: $link');
-    Uri uri = Uri.parse(link);
-    print('URI Path: ${uri.path}');
-    print('URI Path Segments: ${uri.pathSegments}');
-    if (uri.pathSegments.length > 2 && uri.pathSegments[1] == 'play') {
-      String uniqueToken = uri.pathSegments[2];
-      print('Unique token: $uniqueToken');
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        Navigator.of(navigatorKey.currentContext!).pushNamed('/invite', arguments: uniqueToken);
-      });
-    } else {
-      print('Invalid link format');
-    }
-  }
-
-  // //本番環境ではパスセグメントの構造が異なるため上のように更新
+  // // 本番環境用（パスセグメントが異なるためローカル環境ではコメントアウトすること）
   // void _handleDeepLink(String link) {
   //   print('Deep link received: $link');
   //   Uri uri = Uri.parse(link);
-  //   if (uri.pathSegments.length > 1 && uri.pathSegments[0] == 'play') {
-  //     String uniqueToken = uri.pathSegments[1];
+  //   print('URI Path: ${uri.path}');
+  //   print('URI Path Segments: ${uri.pathSegments}');
+  //   if (uri.pathSegments.length > 2 && uri.pathSegments[1] == 'play') {
+  //     String uniqueToken = uri.pathSegments[2];
   //     print('Unique token: $uniqueToken');
   //     WidgetsBinding.instance.addPostFrameCallback((_) {
   //       Navigator.of(navigatorKey.currentContext!).pushNamed('/invite', arguments: uniqueToken);
@@ -121,6 +107,21 @@ class _MyAppState extends State<MyApp> {
   //     print('Invalid link format');
   //   }
   // }
+
+  // ローカルテスト用
+  void _handleDeepLink(String link) {
+    print('Deep link received: $link');
+    Uri uri = Uri.parse(link);
+    if (uri.pathSegments.length > 1 && uri.pathSegments[0] == 'play') {
+      String uniqueToken = uri.pathSegments[1];
+      print('Unique token: $uniqueToken');
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.of(navigatorKey.currentContext!).pushNamed('/invite', arguments: uniqueToken);
+      });
+    } else {
+      print('Invalid link format');
+    }
+  }
 
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 

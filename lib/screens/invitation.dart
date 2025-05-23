@@ -51,8 +51,8 @@ class _InviteScreenState extends State<InviteScreen> {
 
     if (jwtToken.isNotEmpty) {
       final userInfoResponse = await http.get(
-        Uri.parse('https://abehiroto.com:10443/home'), // ユーザー情報を取得するエンドポイント
-        //Uri.parse('http://localhost:8080/home'), // ユーザー情報を取得するエンドポイント
+        //Uri.parse('https://abehiroto.com:10443/home'), // ユーザー情報を取得するエンドポイント
+        Uri.parse('http://localhost:8080/home'), // ユーザー情報を取得するエンドポイント
         headers: {'Authorization': 'Bearer $jwtToken'},
       );
 
@@ -67,8 +67,8 @@ class _InviteScreenState extends State<InviteScreen> {
         if (userInfo['hasRequest'] == true) {
           // 対戦申請がすでにある場合はリダイレクト
 
-          // VPS用
-          html.window.location.href = 'https://abehiroto.com/wmapp';
+          // // VPS用
+          // html.window.location.href = 'https://abehiroto.com/wmapp';
 
           // 以下解決につながらず...ローカルでのテストはどれでもいい
           // // ローカルテスト用
@@ -77,9 +77,9 @@ class _InviteScreenState extends State<InviteScreen> {
           // Future.delayed(Duration(milliseconds: 100), () {
           //   html.window.location.href = '/';
           // });
-          // await Future.delayed(Duration(milliseconds: 100));
-          //   html.window.location.href = '/';
-          // return;
+          await Future.delayed(Duration(milliseconds: 100));
+            html.window.location.href = '/';
+          return;
         }
       } else {
         if (mounted) {
@@ -101,8 +101,8 @@ class _InviteScreenState extends State<InviteScreen> {
     // | |｜／::::::::|::::::| 
 
     final response = await http.get(
-      Uri.parse('https://abehiroto.com:10443/play/${widget.uniqueToken}'),
-      //Uri.parse('http://localhost:8080/play/${widget.uniqueToken}'),
+      //Uri.parse('https://abehiroto.com:10443/play/${widget.uniqueToken}'),
+      Uri.parse('http://localhost:8080/play/${widget.uniqueToken}'),
     );
 
     if (response.statusCode == 200) {
@@ -169,8 +169,8 @@ class _InviteScreenState extends State<InviteScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('https://abehiroto.com:10443/challenger/create/${widget.uniqueToken}'),
-        //Uri.parse('http://localhost:8080/challenger/create/${widget.uniqueToken}'),
+        //Uri.parse('https://abehiroto.com:10443/challenger/create/${widget.uniqueToken}'),
+        Uri.parse('http://localhost:8080/challenger/create/${widget.uniqueToken}'),
         headers: headers,
         body: jsonEncode({
           'nickname': _nicknameController.text,
