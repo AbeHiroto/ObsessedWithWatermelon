@@ -34,8 +34,8 @@ class _MyRoomScreenState extends State<MyRoomScreen> {
       // | |｜／::::::::|::::::|
 
     final response = await http.get(
-      Uri.parse('https://abehiroto.com:10443/room/info'),
-      //Uri.parse('http://localhost:8080/room/info'),
+      //Uri.parse('https://abehiroto.com:10443/room/info'),
+      Uri.parse('http://localhost:8080/room/info'),
       headers: {
         'Authorization': 'Bearer $jwtToken',
       },
@@ -78,8 +78,8 @@ class _MyRoomScreenState extends State<MyRoomScreen> {
       // | |｜／::::::::|::::::|
 
     final response = await http.put(
-      Uri.parse('https://abehiroto.com:10443/request/reply'),
-      //Uri.parse('http://localhost:8080/request/reply'),
+      //Uri.parse('https://abehiroto.com:10443/request/reply'),
+      Uri.parse('http://localhost:8080/request/reply'),
       headers: {
         'Authorization': 'Bearer $jwtToken',
         'Content-Type': 'application/json',
@@ -140,8 +140,8 @@ class _MyRoomScreenState extends State<MyRoomScreen> {
       // | |｜／::::::::|::::::|
 
     final response = await http.delete(
-      Uri.parse('https://abehiroto.com:10443/room'),
-      //Uri.parse('http://localhost:8080/room'),
+      //Uri.parse('https://abehiroto.com:10443/room'),
+      Uri.parse('http://localhost:8080/room'),
       headers: {
         'Authorization': 'Bearer $jwtToken',
       },
@@ -400,21 +400,22 @@ class _MyRoomScreenState extends State<MyRoomScreen> {
     );
   }
 
-  Widget _buildSpeechBubble(String text) {
-    return CustomPaint(
-      painter: SpeechBubblePainter(),
-      child: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
+  // // 未参照のためコメントアウト（問題なければ削除）
+  // Widget _buildSpeechBubble(String text) {
+  //   return CustomPaint(
+  //     painter: SpeechBubblePainter(),
+  //     child: Container(
+  //       padding: const EdgeInsets.all(16.0),
+  //       child: Text(
+  //         text,
+  //         style: TextStyle(
+  //           fontSize: 18.0,
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
 
 class SpeechBubblePainter extends CustomPainter {

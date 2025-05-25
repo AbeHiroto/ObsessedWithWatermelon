@@ -158,8 +158,8 @@ class HomeState with ChangeNotifier {
 
     try {
       final response = await http.get(
-        Uri.parse('https://abehiroto.com:10443/home'), // ホスト名は環境ごとに設定
-        //Uri.parse('http://localhost:8080/home'), // ホスト名は環境ごとに設定
+        //Uri.parse('https://abehiroto.com:10443/home'), // ホスト名は環境ごとに設定
+        Uri.parse('http://localhost:8080/home'), // ホスト名は環境ごとに設定
         headers: {
           'Authorization': 'Bearer $jwtToken',
         },
