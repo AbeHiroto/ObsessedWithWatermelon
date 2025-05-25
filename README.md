@@ -1,30 +1,20 @@
-# Obsessed with Watermelon
+# Flutter Web App "Obsessed with Watermelon"
+## Overview
+"Obsessed with Watermelon" is a two-player online Tic-Tac-Toe variant with a unique referee system. You can play with your friend through the network only by sharing the generated URL. Initially envisioned as a monetized mini-game platform, and also as my first programming project.
 
-![Game Logo](https://github.com/AbeHiroto/wmapp/blob/main/README_pic1.jpg)
-
-"Obsessed with Watermelon" is a two-player online Tic-Tac-Toe variant with a unique referee system. It also featuring easy matching system that requires no user registration. Built using Flutter for the front-end and Go for the back-end, this game offers a fun and engaging twist on the classic game. 
-
-![Screenshot1](https://github.com/AbeHiroto/wmapp/blob/main/README_pic2.jpg)
+<p align="left"> 
+  <img alt="pic2" height="272px" src="images/README_pic2.jpg" />
+  <img alt="pic3" height="272px" src="images/README_pic3.jpg" />
+</p>
 
 ## Features
+- **Unique Referee System**: You can bribe or accuse a corrupt referee without risking your life. ...But why would you have to play this game in the first place, when you know it's rigged by him from the beginning...?
+- **Chat Feature**: Players can communicate with each other during matches via the in-game chat.
+- **JWT Authentication**: Authentication using JSON Web Tokens (JWT), allowing for easy online play.
 
-- **Unique Referee System**: The game includes a mischievous referee who can place marks in unexpected spots unless bribed by players. Players can also challenge each other's bribes.
-- **Chat Feature**: Players can communicate with each other during matches via the in-game chat feature.
-- **JWT Authentication**: Secure authentication using JSON Web Tokens (JWT), allowing for easy online play without user registration.
-
-![Screenshot2](https://github.com/AbeHiroto/wmapp/blob/main/README_pic3.jpg)
-
-## Technologies Used
-
-- **Front-end**: [Flutter](https://flutter.dev/)
-- **Back-end**: [Go](https://golang.org/)
-- **WebSocket**: For real-time communication between the server and clients
-- **JWT**: For secure authentication
-- **ChatGPT**: I couldn't build this app w/o AI
-
-## This app is available on my website!
-
-Visit my website if you are interested. Thanks!
-
-Hiroto<br>
-https://abehiroto.com
+## Available on my website
+<a href="https://abehiroto.com/wmapp">
+  <img src="images/README_pic1.jpg" />
+</a>
+<br>
+<a href="https://abehiroto.com/wmapp">Obsessed with Watermelon</a>
